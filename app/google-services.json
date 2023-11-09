@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "872453410937",
+    "project_id": "ecommerceapp-91c9f",
+    "storage_bucket": "ecommerceapp-91c9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872453410937:android:0c72cfc946eb502ecf84a8",
+        "android_client_info": {
+          "package_name": "com.humeyradogus.ecommerceapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTTCbgISZikyI-nu0UrFJpOK9UFqeLKyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
