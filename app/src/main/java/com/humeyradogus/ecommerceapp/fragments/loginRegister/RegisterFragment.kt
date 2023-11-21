@@ -12,9 +12,12 @@ import androidx.navigation.fragment.findNavController
 import com.humeyradogus.ecommerceapp.R
 import com.humeyradogus.ecommerceapp.data.User
 import com.humeyradogus.ecommerceapp.databinding.FragmentRegisterBinding
+import com.humeyradogus.ecommerceapp.util.RegisterValidation
 import com.humeyradogus.ecommerceapp.util.Resource
 import com.humeyradogus.ecommerceapp.viewModel.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 private val TAG = "RegisterFragment"
 @AndroidEntryPoint
@@ -49,7 +52,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 viewModel.createAccountWithEmailAndPassword(user, password)
             }
         }
-        /**
+
         lifecycleScope.launchWhenStarted {
             viewModel.register.collect {
                 when (it) {
@@ -65,6 +68,28 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                     else -> Unit
                 }
             }
-        }*/
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.validation.collect { validation ->
+                if(validation.email is RegisterValidation.Failed){
+                    withContext(Dispatchers.Main){
+                        binding.edEmailRegister.apply {
+                            requestFocus()
+                            error = validation.email.message
+                        }
+                    }
+                }
+
+                if(validation.password is RegisterValidation.Failed){
+                    withContext(Dispatchers.Main){
+                        binding.edPasswordRegister.apply {
+                            requestFocus()
+                            error = validation.password.message
+                        }
+                    }
+                }
+            }
+        }
     }
 }
