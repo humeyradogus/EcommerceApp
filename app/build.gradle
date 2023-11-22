@@ -70,6 +70,7 @@ dependencies {
 
     //Firebase
     implementation 'com.google.firebase:firebase-auth:21.0.6'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.4'
 
     //Coroutines with firebase
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.1'
