@@ -11,10 +11,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.humeyradogus.ecommerceapp.R
 import com.humeyradogus.ecommerceapp.activities.ShoppingActivity
 import com.humeyradogus.ecommerceapp.databinding.FragmentLoginBinding
 import com.humeyradogus.ecommerceapp.databinding.FragmentRegisterBinding
+import com.humeyradogus.ecommerceapp.dialog.setupBottomSheetDialog
 import com.humeyradogus.ecommerceapp.util.Resource
 import com.humeyradogus.ecommerceapp.viewModel.LoginViewModel
 import com.humeyradogus.ecommerceapp.viewModel.RegisterViewModel
@@ -38,11 +40,37 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.tvDontHaveAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+
         binding.apply {
             buttonLoginLogin.setOnClickListener {
                 val email = edEmailLogin.text.toString().trim()
                 val password = edPasswordLogin.text.toString().trim()
                 viewModel.login(email,password)
+            }
+        }
+
+        binding.tvForgotPasswordLogin.setOnClickListener {
+            setupBottomSheetDialog { email ->
+                viewModel.resetPassword(email)
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.resetPassword.collect {
+                when (it) {
+                    is Resource.Loading -> {
+                    }
+                    is Resource.Success -> {
+                        Snackbar.make(requireView(),"Reset link was sent to your e-mail address.", Snackbar.LENGTH_LONG).show()
+                    }
+                    is Resource.Error -> {
+                        Snackbar.make(requireView(),"Something went wrong! Try again!", Snackbar.LENGTH_LONG).show()
+                    }
+                    else -> Unit
+                }
             }
         }
 
