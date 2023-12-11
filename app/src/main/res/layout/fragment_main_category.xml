@@ -48,6 +48,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvBestDealsProducts"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -66,7 +67,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/rvBestDealsProducts"
                 app:layout_constraintHorizontal_bias="0.47"
                 app:layout_constraintStart_toStartOf="@id/rvBestDealsProducts"
-                app:layout_constraintTop_toTopOf="@+id/rvBestDealsProducts"
+                app:layout_constraintTop_toBottomOf="@+id/rvBestDealsProducts"
                 app:layout_constraintVertical_bias="1.0" />
 
             <androidx.recyclerview.widget.RecyclerView

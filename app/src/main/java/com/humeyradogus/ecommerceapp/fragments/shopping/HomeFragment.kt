@@ -35,6 +35,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             AccessoryFragment()
         )
 
+        binding.viewPageHome.isUserInputEnabled = false
+
         val viewPager2Adapter = HomeViewpagerAdapter(categoriesFragments, childFragmentManager, lifecycle)
 
         binding.viewPageHome.adapter = viewPager2Adapter

@@ -49,17 +49,6 @@ class SpecialProductsAdapter :
     override fun onBindViewHolder(holder: SpecialProductsViewHolder, position: Int) {
         val product = differ.currentList[position]
         holder.bind(product)
-
-        /**
-
-        holder.itemView.setOnClickListener {
-            onItemClick?.invoke(product)
-        }
-
-
-        holder.binding.btnAddToCart.setOnClickListener {
-            onAddToCartClick?.invoke(product)
-        }*/
     }
 
     override fun getItemCount(): Int {
