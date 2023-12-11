@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.ktx.Firebase
 import com.humeyradogus.ecommerceapp.R
 import com.humeyradogus.ecommerceapp.activities.ShoppingActivity
 import com.humeyradogus.ecommerceapp.databinding.FragmentLoginBinding
