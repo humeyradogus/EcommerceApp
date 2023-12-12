@@ -5,6 +5,8 @@ object Constants {
     //companion object {
     const val SPLASH_SHARED_PREF = "showSplash"
     const val SHOULD_SHOW = "shouldShow"
+    const val INTRODUCTION_SP = "IntroductionSP"
+    const val INTRODUCTION_KEY = "IntroductionKey"
 
     const val USERS_COLLECTION = "user"
     const val ADDRESS_COLLECTION = "addresses"
