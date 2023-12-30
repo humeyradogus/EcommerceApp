@@ -6,6 +6,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.humeyradogus.ecommerceapp.firebase.FirebaseCommon
 import com.humeyradogus.ecommerceapp.util.Constants.INTRODUCTION_SP
 import dagger.Module
 import dagger.Provides
@@ -28,4 +29,7 @@ object AppModule {
     @Provides
     fun provideIntroductionSP(application: Application) = application.getSharedPreferences(INTRODUCTION_SP,MODE_PRIVATE)
 
+    @Provides
+    @Singleton
+    fun provideFirebaseCommon(firebaseAuth: FirebaseAuth, firestore: FirebaseFirestore) = FirebaseCommon(firestore,firebaseAuth)
 }
