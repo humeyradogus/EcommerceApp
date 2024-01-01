@@ -11,19 +11,20 @@ import com.bumptech.glide.Glide
 import com.humeyradogus.ecommerceapp.data.Product
 import com.humeyradogus.ecommerceapp.databinding.BestDealsRvItemBinding
 import com.humeyradogus.ecommerceapp.databinding.ProductRvItemBinding
-class BestProductAdapter: RecyclerView.Adapter<BestProductAdapter.BestProductViewHolder>()  {
+import com.humeyradogus.ecommerceapp.helper.getProductPrice
+
+class BestProductAdapter : RecyclerView.Adapter<BestProductAdapter.BestProductViewHolder>() {
     inner class BestProductViewHolder(private val binding: ProductRvItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.apply {
                 Glide.with(itemView).load(product.images[0]).into(imgProduct)
-                product.offerPercentage?.let {
-                    val remainingPricePercentage = 1f - it
-                    val priceAfterOffer = remainingPricePercentage * product.price
-                    tvNewPrice.text = "$ ${String.format("%.2f",priceAfterOffer)}"
-                    tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-                }
-                if (product.offerPercentage == null){
+
+                val priceAfterOffer = product.offerPercentage.getProductPrice(product.price)
+                tvNewPrice.text = "$ ${String.format("%.2f", priceAfterOffer)}"
+                tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+
+                if (product.offerPercentage == null) {
                     tvNewPrice.visibility = View.INVISIBLE
                 }
                 tvPrice.text = "$ ${product.price}"
@@ -45,7 +46,13 @@ class BestProductAdapter: RecyclerView.Adapter<BestProductAdapter.BestProductVie
     val differ = AsyncListDiffer(this@BestProductAdapter, diffCallBack)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestProductViewHolder {
-        return BestProductViewHolder(ProductRvItemBinding.inflate(LayoutInflater.from(parent.context),parent, false))
+        return BestProductViewHolder(
+            ProductRvItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: BestProductViewHolder, position: Int) {
