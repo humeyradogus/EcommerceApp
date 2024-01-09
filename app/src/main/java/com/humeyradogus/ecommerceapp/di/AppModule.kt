@@ -6,6 +6,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import com.humeyradogus.ecommerceapp.firebase.FirebaseCommon
 import com.humeyradogus.ecommerceapp.util.Constants.INTRODUCTION_SP
 import dagger.Module
@@ -32,4 +33,8 @@ object AppModule {
     @Provides
     @Singleton
     fun provideFirebaseCommon(firebaseAuth: FirebaseAuth, firestore: FirebaseFirestore) = FirebaseCommon(firestore,firebaseAuth)
+
+    @Provides
+    @Singleton
+    fun provideStorage() = FirebaseStorage.getInstance().reference
 }
