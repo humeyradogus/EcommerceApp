@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/bottom_nav_item_background.xml" value="0.236" />
         <entry key="app/src/main/res/drawable/empty_box_background.xml" value="0.1925" />
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.2135" />
+        <entry key="app/src/main/res/drawable/ic_arrow.xml" value="0.183" />
         <entry key="app/src/main/res/drawable/ic_cart.xml" value="0.236" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.2245" />
         <entry key="app/src/main/res/drawable/ic_empty_box.xml" value="0.1925" />
@@ -50,11 +51,13 @@
         <entry key="app/src/main/res/layout/fragment_introduction.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_main_category.xml" value="0.30833333333333335" />
+        <entry key="app/src/main/res/layout/fragment_orders.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/layout/fragment_product_details.xml" value="0.20520833333333333" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.27858880778588807" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.23854166666666668" />
         <entry key="app/src/main/res/layout/fragment_user_account.xml" value="0.23958333333333334" />
+        <entry key="app/src/main/res/layout/order_item.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/layout/product_rv_item.xml" value="0.335" />
         <entry key="app/src/main/res/layout/reset_password_dialog.xml" value="0.25" />
         <entry key="app/src/main/res/layout/size_rv_item.xml" value="0.23854166666666668" />

@@ -78,4 +78,8 @@
         android:name="com.humeyradogus.ecommerceapp.fragments.settings.UserAccountFragment"
         android:label="UserAccountFragment"
         tools:layout="@layout/fragment_user_account"/>
+    <fragment
+        android:id="@+id/allOrdersFragment"
+        android:name="com.humeyradogus.ecommerceapp.fragments.shopping.AllOrdersFragment"
+        android:label="AllOrdersFragment" />
 </navigation>
