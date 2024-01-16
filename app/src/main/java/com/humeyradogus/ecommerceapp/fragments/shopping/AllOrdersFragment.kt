@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.humeyradogus.ecommerceapp.adapters.AllOrdersAdapter
@@ -21,7 +22,7 @@ import kotlinx.coroutines.flow.collectLatest
 class AllOrdersFragment : Fragment() {
     private lateinit var binding: FragmentOrdersBinding
     val viewModel by viewModels<AllOrdersViewModel>()
-    val allOrdersAdapter by lazy { AllOrdersAdapter() }
+    val ordersAdapter by lazy { AllOrdersAdapter() }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentOrdersBinding.inflate(inflater)
@@ -41,7 +42,7 @@ class AllOrdersFragment : Fragment() {
                     }
                     is Resource.Success -> {
                         binding.progressbarAllOrders.visibility = View.GONE
-                        allOrdersAdapter.differ.submitList(it.data)
+                        ordersAdapter.differ.submitList(it.data)
                         if (it.data.isNullOrEmpty()) {
                             binding.tvEmptyOrders.visibility = View.VISIBLE
                         }
@@ -55,11 +56,16 @@ class AllOrdersFragment : Fragment() {
             }
         }
 
+        ordersAdapter.onClick = {
+            val action = AllOrdersFragmentDirections.actionAllOrdersFragmentToOrderDetailFragment(it)
+            findNavController().navigate(action)
+        }
+
     }
 
     private fun setupOrdersRv() {
         binding.rvAllOrders.apply {
-            adapter = allOrdersAdapter
+            adapter = ordersAdapter
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         }
     }
