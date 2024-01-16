@@ -12,16 +12,21 @@
         <entry key="app/src/main/res/drawable/bottom_nav_item_background.xml" value="0.236" />
         <entry key="app/src/main/res/drawable/empty_box_background.xml" value="0.1925" />
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.2135" />
+        <entry key="app/src/main/res/drawable/ic_all_orders.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/ic_arrow.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_billing.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/ic_cart.xml" value="0.236" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.2245" />
         <entry key="app/src/main/res/drawable/ic_empty_box.xml" value="0.1925" />
         <entry key="app/src/main/res/drawable/ic_empty_box_texture.xml" value="0.1925" />
         <entry key="app/src/main/res/drawable/ic_favorite.xml" value="0.152" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.236" />
+        <entry key="app/src/main/res/drawable/ic_language.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/ic_location.xml" value="0.2135" />
+        <entry key="app/src/main/res/drawable/ic_logout.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/ic_microphone.xml" value="0.2305" />
         <entry key="app/src/main/res/drawable/ic_minus.xml" value="0.1925" />
+        <entry key="app/src/main/res/drawable/ic_notification.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/ic_picked.xml" value="0.152" />
         <entry key="app/src/main/res/drawable/ic_plus.xml" value="0.1925" />
         <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.236" />
