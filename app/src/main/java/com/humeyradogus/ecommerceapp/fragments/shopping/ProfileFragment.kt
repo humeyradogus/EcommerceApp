@@ -49,7 +49,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
 
         binding.linearBilling.setOnClickListener {
-            val action = ProfileFragmentDirections.actionProfileFragmentToBillingFragment(0f, emptyArray())
+            val action = ProfileFragmentDirections.actionProfileFragmentToBillingFragment(0f, emptyArray(),false)
             findNavController().navigate(action)
         }
 
