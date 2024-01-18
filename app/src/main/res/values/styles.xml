@@ -31,7 +31,7 @@
     </style>
 
     <style name="editText">
-        <item name="android:background">@drawable/white_background</item>
+        <item name="android:background">#ECECEC</item>
         <item name="android:gravity">center</item>
         <item name="singleLine">true</item>
         <item name="android:textStyle">bold</item>
