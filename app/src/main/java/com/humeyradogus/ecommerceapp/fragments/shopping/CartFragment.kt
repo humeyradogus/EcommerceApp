@@ -134,7 +134,6 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
 
     private fun hideEmptyCart() {
         binding.apply {
-            imageEmptyBox.visibility = View.GONE
             imageEmptyBoxTexture.visibility = View.GONE
             tvEmptyCart.visibility = View.GONE
         }
@@ -142,7 +141,6 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
 
     private fun showEmptyCart() {
         binding.apply {
-            imageEmptyBox.visibility = View.VISIBLE
             imageEmptyBoxTexture.visibility = View.VISIBLE
             tvEmptyCart.visibility = View.VISIBLE
         }

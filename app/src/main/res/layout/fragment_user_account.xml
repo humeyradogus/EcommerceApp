@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarUserAccount"
@@ -89,7 +90,7 @@
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
-            android:background="@drawable/white_background"
+            style="@style/editText"
             android:gravity="center"
             android:hint="First Name"
             android:singleLine="true"
@@ -103,7 +104,7 @@
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/white_background"
+            style="@style/editText"
             android:gravity="center"
             android:hint="Last Name"
             android:singleLine="true"
@@ -117,7 +118,7 @@
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/white_background"
+            style="@style/editText"
             android:editable="false"
             android:gravity="center"
             android:hint="Email"

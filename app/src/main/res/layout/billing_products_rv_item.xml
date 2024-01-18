@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Chair"
+            android:text="Test Product"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -59,8 +59,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageCartProductColor"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginTop="5dp"
             android:src="@color/g_blue"
             app:layout_constraintStart_toStartOf="@id/tvProductCartPrice"
@@ -68,8 +68,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageCartProductSize"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginStart="5dp"
             android:src="@color/g_blue_gray200"
             app:layout_constraintStart_toEndOf="@id/imageCartProductColor"
